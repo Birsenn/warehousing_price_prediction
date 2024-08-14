@@ -3,3 +3,4 @@ pandas
 pickleshare
 plotly
 scikit-learn
+xgboost
