@@ -22,9 +22,9 @@ st.markdown("## 🚚 OLIMP Data Analysis & Warehousing Price Prediction")
 col1, col2 = st.columns([10, 3])
 
 with col2:
-    st.image('/Users/birsenbayat/Desktop/OLIMP/streamlit/olimp.png')
+    st.image('olimp.png')
 
-df = load_data('/Users/birsenbayat/Desktop/OLIMP/OLIMP_clean_dataset.csv')
+df = load_data('OLIMP_clean_dataset.csv')
 
 median_prices_by_year = df.groupby("Year")["Price"].median()
 df["Price_Year"] = df["Year"].map(median_prices_by_year)
@@ -118,7 +118,7 @@ st.plotly_chart(fig)
 ###############################################################
 st.markdown("# 📦 Warehousing Price Prediction")
 
-df_model = load_data('/Users/birsenbayat/Desktop/OLIMP/OLIMP_model_dataset.csv')
+df_model = load_data('OLIMP_model_dataset.csv')
 df_model = df_model.drop("Price", axis=1)
 df_model.head()
 ########################
@@ -192,7 +192,7 @@ input_list = [tuple([encode['Location'][Location],
                      ])]
 
 
-with open('/Users/birsenbayat/Desktop/OLIMP/streamlit/pricing_model.sav', 'rb') as f:
+with open('pricing_model.sav', 'rb') as f:
     model = pickle.load(f)
 
 
