@@ -1,5 +1,5 @@
 streamlit
 pandas
-pickle
+pickleshare
 plotly
-sklearn
+scikit-learn
